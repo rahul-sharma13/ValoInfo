@@ -4,7 +4,7 @@ import EventCard from "./EventCard";
 import TextShine from "./TextShine";
 
 const Events = () => {
-  const url = "https://vlrgg.cyclic.app/api/events";
+  const url = "api/events";
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
