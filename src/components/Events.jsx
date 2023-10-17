@@ -37,4 +37,3 @@ const Events = () => {
 };
 
 export default Events;
-//api/events
