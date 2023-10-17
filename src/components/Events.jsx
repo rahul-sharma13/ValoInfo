@@ -24,7 +24,7 @@ const Events = () => {
         <TextShine name={"Events"} />
         <p className="mt-4 font-medium text-[18px]">List of events happening around the world.</p>
       </div>
-      <div className="flex mt-8 justify-center gap-4">
+      <div className="flex flex-wrap mt-8 justify-center sm:gap-4">
         <div>
           <EventCard events={events} startIndex={0} endIndex={5} />
         </div>
@@ -37,3 +37,4 @@ const Events = () => {
 };
 
 export default Events;
+//api/events

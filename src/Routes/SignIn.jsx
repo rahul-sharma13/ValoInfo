@@ -34,12 +34,12 @@ const SignIn = () => {
   };
 
   return (
-    <div className="bg-accent max-w-3xl mx-auto h-[500px] my-6 rounded-[40px] font-poppins tracking-wider">
-      <div className="flex ml-10">
+    <div className="bg-accent sm:max-w-3xl max-w-[350px] mx-auto sm:h-[500px] h-[400px] my-6 rounded-[40px] font-poppins tracking-wider">
+      <div className="flex sm:ml-10 ml-0">
         {/* left form */}
         <div className="flex flex-col items-center mt-10 flex-1">
           <div className="mb-5">
-            <h1 className="text-center text-[60px] font-bold">Welcome</h1>
+            <h1 className="text-center sm:text-[60px] text-[30px] font-bold">Welcome</h1>
             <p className="text-[14px] text-center text-gray-600">
               We are glad to see you back with us
             </p>

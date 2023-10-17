@@ -12,6 +12,9 @@ import { Link } from "react-router-dom";
 const Agents = () => {
   const url = "https://valorant-api.com/v1/agents?isPlayableCharacter=true"; //filtering to not show the duplicated sova.
   const [agents, setAgents] = useState([]);
+  const [role, setRole] = useState("Initiator");
+  const lists = ["Initiator", "Controller", "Duelist", "Sentinel"];
+
 
   useEffect(() => {
     axios
@@ -27,48 +30,63 @@ const Agents = () => {
 
   return (
     <>
-      <div className="text-center mt-5">
+      <div className="text-center sm:mt-5 mt-8">
         <TextShine name={"Agents"} />
       </div>
+      <div className="mx-auto bg-accent mt-8 flex sm:w-[576px] w-[370px] items-center h-20 rounded-2xl shadow-lg font-poppins justify-center sm:gap-8 gap-2">
+        {lists.map((list, index) => (
+          <li
+            key={index}
+            className="font-bold tracking-wider text-[18px] cursor-pointer list-none hover:scale-110 transition-all transform duration-300"
+            onClick={() => setRole(list)}
+            value={list}
+          >
+            {list}
+          </li>
+        ))}
+      </div>
+
       <Swiper
-        // install Swiper modules
         modules={[Navigation, A11y]}
         spaceBetween={50}
         slidesPerView={1}
         navigation
       >
         {agents.map((agent, index) => (
-          <SwiperSlide key={index}>
-            <div className="max-w-5xl h-[500px] mx-auto mb-6 flex tracking-wider">
-              {/* left */}
-              <div className="">
-                <img
-                  src={agent?.fullPortrait}
-                  className="h-[512px] w-[512px] object-contain"
-                />
-              </div>
-              {/* right */}
-              <div className=" my-auto">
-                <Link to={`/${agent.uuid}`}>
-                <p className="text-[18px] font-bold cursor-pointer">
-                  {agent?.displayName}
-                  <span className=" text-gray-600">
-                    ({agent?.developerName})
-                  </span>
-                </p>
-                </Link>
-                <p>{agent?.role?.displayName}</p>
-
-                <div className="max-w-[475px] mt-5 text-[14px] leading-7">
-                  {agent?.description}
+          agent.role.displayName == role ? (
+            <SwiperSlide key={index}>
+              <div className="max-w-5xl sm:h-[500px] h-[340px] mx-auto sm:mb-6 flex tracking-wider">
+                {/* left */}
+                <div className="hidden sm:block">
+                  <img
+                    src={agent?.fullPortrait}
+                    className="h-[512px] w-[512px] object-contain"
+                  />
+                  {console.log(agent.role.displayName)}
                 </div>
+                {/* right */}
+                <div className=" my-auto">
+                  <Link to={`/${agent.uuid}`}>
+                    <p className="text-[18px] sm:text-left sm:ml-0 ml-8 text-center font-bold cursor-pointer">
+                      {agent?.displayName}
+                      <span className=" text-gray-600">
+                        ({agent?.developerName})
+                      </span>
+                    </p>
+                  </Link>
+                  <p className="sm:text-left text-center sm:ml-0 ml-8">{agent?.role?.displayName}</p>
 
-                <p className="text-[12px] mt-4 text-gray-500">
-                  (click on agent name to get ability details)
-                </p>
+                  <div className="sm:max-w-[475px] max-w-xs sm:ml-0 ml-8 sm:text-left text-center mt-5 text-[14px] leading-7">
+                    {agent?.description}
+                  </div>
+
+                  <p className="text-[12px] sm:block hidden mt-4 text-gray-500">
+                    (click on agent name to get ability details)
+                  </p>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
+            </SwiperSlide>
+          ) : ""
         ))}
       </Swiper>
     </>

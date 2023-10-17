@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext } from '../context/ThemeContext'
 
 const Footer = () => {
+  const { theme, setTheme } = useContext(ThemeContext);
+
   return (
     <footer className="bg-white dark:bg-gray-900 mt-4 font-poppins">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <a href="https://flowbite.com/" className="flex items-center">
-              <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="FlowBite Logo" />
+              {theme === "dark" ? (<img src="./logos/logo2.png" className="h-9 mr-1" alt="ValoInfo" />) : (<img src="./logos/logo1.png" className="h-9 mr-1" alt="ValoInfo" />)}
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ValoInfo</span>
             </a>
           </div>

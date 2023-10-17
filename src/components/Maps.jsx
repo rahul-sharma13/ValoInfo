@@ -25,7 +25,7 @@ const Maps = () => {
   });
   return (
     <>
-      <div className="text-center mt-5">
+      <div className="text-center sm:mt-5 mt-3">
         <TextShine name={"Maps"} />
       </div>
       <Swiper
@@ -37,16 +37,17 @@ const Maps = () => {
       >
         {maps.map((map, index) => (
           <SwiperSlide key={index}>
-            <div className="max-w-5xl h-[500px] mx-auto mb-6 flex gap-10 tracking-wider">
+            <div className="max-w-5xl sm:h-[500px] h-[340px] mx-auto flex gap-10 tracking-wider">
               {/* left */}
-              <div className="">
+              <div className="sm:block mx-auto my-auto">
                 <img
                   src={map?.splash}
-                  className="h-[512px] w-[512px] object-contain"
+                  className="sm:h-[512px] h-[250px] sm:w-[512px] w-[300px] object-contain"
                 />
+                <p className="text-center">{map?.displayName}</p>
               </div>
               {/* right */}
-              <div className=" my-auto">
+              <div className=" my-auto sm:block hidden">
                 <p className="text-[18px] font-bold">
                   {map?.displayName}
                   <span className=" text-gray-600">
