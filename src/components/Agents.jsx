@@ -33,11 +33,11 @@ const Agents = () => {
       <div className="text-center sm:mt-5 mt-8">
         <TextShine name={"Agents"} />
       </div>
-      <div className="mx-auto bg-accent mt-8 flex sm:w-[576px] w-[370px] items-center h-20 rounded-2xl shadow-lg font-poppins justify-center sm:gap-8 gap-2">
+      <div className="mx-auto bg-accent mt-8 flex sm:w-[576px] w-[350px] items-center h-20 rounded-2xl shadow-lg font-poppins justify-center sm:gap-8 gap-4">
         {lists.map((list, index) => (
           <li
             key={index}
-            className="font-bold tracking-wider text-[18px] cursor-pointer list-none hover:scale-110 transition-all transform duration-300"
+            className="font-bold tracking-wider sm:text-[18px] text-[15px] cursor-pointer list-none hover:scale-110 transition-all transform duration-300"
             onClick={() => setRole(list)}
             value={list}
           >
@@ -74,9 +74,9 @@ const Agents = () => {
                       </span>
                     </p>
                   </Link>
-                  <p className="sm:text-left text-center sm:ml-0 ml-8">{agent?.role?.displayName}</p>
+                  <p className="sm:text-left text-center sm:ml-0 ml-4">{agent?.role?.displayName}</p>
 
-                  <div className="sm:max-w-[475px] max-w-xs sm:ml-0 ml-8 sm:text-left text-center mt-5 text-[14px] leading-7">
+                  <div className="sm:max-w-[475px] max-w-xs sm:p-0 p-2 sm:mx-0 mx-4 sm:text-left text-center sm:mt-5 text-[14px] leading-7">
                     {agent?.description}
                   </div>
 

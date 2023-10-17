@@ -7,11 +7,11 @@ const EventSection = ({ para, head }) => (
     </div>
   );
   
-  const EventCard = ({ events, startIndex, endIndex }) => {
+  const EventCard = ({ events }) => {
     // console.log(startIndex);
     return (
       <>
-        {events.slice(startIndex, endIndex).map((event, index) => (
+        {events.map((event, index) => (
           <div
             className="bg-accent text-black sm:h-28 h-36 tracking-wider sm:max-w-screen-2xl  flex justify-between mb-4"
             key={index}
@@ -20,16 +20,14 @@ const EventSection = ({ para, head }) => (
             <div className="mx-3 my-auto sm:w-[400px] w-[200px]">
               {/* name */}
               <div className="font-semibold text-[18px] mb-2 text-accent-foreground">
-                {event.event_name}
+                {event.displayName}
               </div>
               {/* details */}
               <div className="flex text-[14px] gap-10">
                 {/* prize */}
-                <EventSection para={event.prize_pool} head={"Prize Pool"} />
+                <EventSection para={event.startTime} head={"Start Time"} />
                 {/* dates */}
-                <EventSection para={event.dates} head={"Dates"} />
-                {/* region */}
-                <EventSection para={event.region} head={"Region"} />
+                <EventSection para={event.endTime} head={"End Time"} />
               </div>
             </div>
             <div

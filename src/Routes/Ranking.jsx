@@ -7,7 +7,7 @@ const Ranking = () => {
     const [region, setRegion] = useState("Europe");
     const [rankings, setRankings] = useState([]);
 
-    const url = `https://vlrgg.cyclic.app/api/rankings/${region}`;
+    const url = `api/rankings/${region}`;
 
     useEffect(() => {
         axios.get(url).then((response) => {

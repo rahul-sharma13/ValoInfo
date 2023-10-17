@@ -37,12 +37,12 @@ const Maps = () => {
       >
         {maps.map((map, index) => (
           <SwiperSlide key={index}>
-            <div className="max-w-5xl sm:h-[500px] h-[340px] mx-auto flex gap-10 tracking-wider">
+            <div className="max-w-5xl sm:h-[500px] h-[300px] mx-auto flex gap-10 tracking-wider">
               {/* left */}
               <div className="sm:block mx-auto my-auto">
                 <img
                   src={map?.splash}
-                  className="sm:h-[512px] h-[250px] sm:w-[512px] w-[300px] object-contain"
+                  className="sm:h-[512px] h-[250px] sm:w-[512px] w-[300px] object-contain mt-5"
                 />
                 <p className="text-center">{map?.displayName}</p>
               </div>
