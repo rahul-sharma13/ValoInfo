@@ -65,7 +65,7 @@ const SignIn = () => {
                 />
                 <CiLock className="absolute top-3 right-2" />
               </div>
-              <button className="cursor-pointer group relative flex justify-center gap-1.5 px-7 py-2 bg-black bg-opacity-80 text-[#f1f1f1] rounded-xl hover:bg-opacity-70 transition shadow-md dark:bg-white dark:text-black">
+              <button className="cursor-pointer group relative flex justify-center gap-1.5 px-7 py-2 bg-black bg-opacity-80 text-[#f1f1f1] rounded-xl hover:bg-opacity-70 shadow-md dark:bg-white dark:text-black">
                 Sign In
               </button>
             </form>
@@ -74,7 +74,7 @@ const SignIn = () => {
               others--
             </p>
             <button
-              className=" border-2 border-black px-9 py-3 rounded-xl dark:border-white"
+              className=" border-2 border-black px-9 py-3 rounded-xl dark:border-white w-full"
               onClick={googleSignIn}
             >
               Login with <span className="font-bold text-[15px]">Google</span>

@@ -11,6 +11,7 @@ import { ThemeProvider } from './context/ThemeContext'
 import Footer from './components/Footer'
 import Account from './Routes/Account'
 import { AuthContextProvider } from './context/AuthContext'
+import Leaderboard from './Routes/Leaderboard'
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
         </Routes>
         <Footer />
       </AuthContextProvider>

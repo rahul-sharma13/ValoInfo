@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { navLinks, UserInfo } from '../constants';
+import { navLinks } from '../constants';
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import ThemeToggle from './ThemeToggle';

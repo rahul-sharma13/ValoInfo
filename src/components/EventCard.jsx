@@ -8,7 +8,6 @@ const EventSection = ({ para, head }) => (
   );
   
   const EventCard = ({ events }) => {
-    // console.log(startIndex);
     return (
       <>
         {events.map((event, index) => (
@@ -24,7 +23,6 @@ const EventSection = ({ para, head }) => (
               </div>
               {/* details */}
               <div className="flex text-[14px] gap-10">
-                {/* prize */}
                 <EventSection para={event.startTime} head={"Start Time"} />
                 {/* dates */}
                 <EventSection para={event.endTime} head={"End Time"} />
