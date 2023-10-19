@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <a href="https://flowbite.com/" className="flex items-center">
+            <a href="https://valoinfo.netlify.app/" className="flex items-center">
               {theme === "dark" ? (<img src="./logos/logo2.png" className="h-9 mr-1" alt="ValoInfo" />) : (<img src="./logos/logo1.png" className="h-9 mr-1" alt="ValoInfo" />)}
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ValoInfo</span>
             </a>
@@ -22,7 +22,7 @@ const Footer = () => {
                   <a href="https://valorant-api.com/" className="hover:underline">Valorant-API</a>
                 </li>
                 <li>
-                  <a href="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</a>
+                  <a href="https://github.com/Henrik-3/unofficial-valorant-api" className="hover:underline">Henrik-3-API</a>
                 </li>
               </ul>
             </div>

@@ -2,7 +2,6 @@ import React from 'react'
 import Header from './components/Header'
 import { Route, Routes } from 'react-router-dom'
 import Matches from './Routes/Matches'
-import Ranking from './Routes/Ranking'
 import Home from './Routes/Home'
 import AgentPage from './components/AgentPage'
 import SignIn from './Routes/SignIn'
@@ -21,7 +20,6 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/matches" element={<Matches />} />
-          <Route path="/ranking" element={<Ranking />} />
           <Route path="/:uuid" element={<AgentPage />}>
             <Route path=":uuid" />
           </Route>

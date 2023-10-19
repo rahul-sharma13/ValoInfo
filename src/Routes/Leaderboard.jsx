@@ -44,7 +44,7 @@ const Leaderboard = () => {
     }).catch((error) => {
       console.log(error);
     })
-  })
+  },[url])
 
   return (
     <>
@@ -58,10 +58,14 @@ const Leaderboard = () => {
           </div>
         </div>
       </div>
-
+      
+      <div className='uppercase flex justify-center gap-10 mt-3'>
+        <TextShine name={currentRegion} />
+        <TextShine name={episodeAct} />
+      </div>
 
       {/* epside menu */}
-      <div className={eaMenu ? 'h-24 absolute z-10 w-36 bg-accent flex flex-col rounded-2xl left-36 top-36 opacity-100 duration-200 items-center overflow-y-scroll no-scrollbar' : 'h-20 absolute z-10 w-36 bg-accent rounded-2xl left-36 flex flex-col top-36 opacity-0 transform duration-200 items-center overflow-auto overflow-y-scroll no-scrollbar'}>
+      <div className={eaMenu ? 'h-24 absolute z-10 w-36 bg-background border-2 flex flex-col rounded-2xl left-36 top-36 opacity-100 duration-200 items-center overflow-y-scroll no-scrollbar' : 'h-20 absolute z-10 w-36 bg-accent rounded-2xl left-36 flex flex-col top-36 opacity-0 transform duration-200 items-center overflow-auto overflow-y-scroll no-scrollbar'}>
         {episodes.map((episode, index) => (
           <h1 key={index} className={`cursor-pointer py-1 ${index === episodes.length - 1 ? 'mb-2' : 'mb-0'} hover:text-gray-400 font-semibold tracking-wider`} onClick={() => setEpisodeAct(episode.toLowerCase().replace('-', ''))}>
             {episode}
@@ -70,7 +74,7 @@ const Leaderboard = () => {
       </div>
 
       {/* region menu */}
-      <div className={regionMenu ? 'h-24  absolute z-10 w-28 bg-accent flex flex-col rounded-2xl left-[305px] opacity-100 top-36 transform duration-200 items-center overflow-auto overflow-y-scroll no-scrollbar font-semibold tracking-wider' : 'h-20 absolute z-10 w-28 bg-accent rounded-2xl left-[305px] top-36 opacity-0 flex flex-col duration-200 text-center overflow-auto overflow-y-scroll no-scrollbar font-semibold tracking-wider'}>
+      <div className={regionMenu ? 'h-24  absolute z-10 w-28 bg-background border-2 flex flex-col rounded-2xl left-[305px] opacity-100 top-36 transform duration-200 items-center overflow-auto overflow-y-scroll no-scrollbar font-semibold tracking-wider' : 'h-20 absolute z-10 w-28 bg-accent rounded-2xl left-[305px] top-36 opacity-0 flex flex-col duration-200 text-center overflow-auto overflow-y-scroll no-scrollbar font-semibold tracking-wider'}>
         {Regions.map((region, index) => (
           <h1 key={index} className={`text-[14px] cursor-pointer py-1 ${index === Regions.length - 1 ? 'mb-2' : 'mb-0'} hover:text-gray-400`} onClick={()=>setCurrentRegion(region)}>
             {region}
