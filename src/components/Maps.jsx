@@ -22,7 +22,7 @@ const Maps = () => {
       .catch((error) => {
         console.log(error);
       });
-  });
+  },[url]);
   return (
     <>
       <div className="text-center sm:mt-5 mt-3">

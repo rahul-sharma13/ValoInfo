@@ -62,7 +62,6 @@ const Agents = () => {
                     src={agent?.fullPortrait}
                     className="h-[512px] w-[512px] object-contain"
                   />
-                  {console.log(agent.role.displayName)}
                 </div>
                 {/* right */}
                 <div className=" my-auto">
