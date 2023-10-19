@@ -66,7 +66,7 @@ const SignUp = () => {
               </button>
             </form>
             <p className="text-center text-[14px] my-3">Have an account?</p>
-            <button className=" border-2 border-black px-9 py-3 rounded-xl" onClick={goToSignIn}>
+            <button className=" border-2 border-black px-9 py-3 rounded-xl w-full" onClick={goToSignIn}>
               <span className="font-bold text-[15px]">SignIn</span> to account
             </button>
           </div>

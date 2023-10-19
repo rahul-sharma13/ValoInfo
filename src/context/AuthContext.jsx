@@ -37,7 +37,7 @@ export const AuthContextProvider = ({children}) =>{
         const unsubscribe = onAuthStateChanged(auth,(currentUser) => {
             setUser(currentUser);
             if(currentUser){
-                console.log(currentUser)
+                // console.log(currentUser)
                 setDoc(doc(db,'users',currentUser.email),{
                     watchList:[],
                 })

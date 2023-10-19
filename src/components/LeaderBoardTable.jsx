@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LeaderBoardTable = ({ ranks, region ,act }) => {
+const LeaderBoardTable = ({ ranks, act }) => {
     return (
         <div className=" max-w-4xl mx-auto mb-8 overflow-hidden rounded-lg shadow-lg mt-10 font-poppins">
             <div className="w-full overflow-x-auto">
@@ -31,7 +31,7 @@ const LeaderBoardTable = ({ ranks, region ,act }) => {
                                             ></div>
                                         </div>
                                         <div>
-                                            <p className="font-semibold tracking-wider">
+                                            <p className="font-semibold tracking-wider cursor-pointer">
                                                 {rank?.gameName}<span className='font-light text-gray-400'>#{rank?.tagLine}</span>
                                             </p>
                                             <p className="text-xs text-gray-600 uppercase">{act}</p>

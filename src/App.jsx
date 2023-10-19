@@ -1,16 +1,12 @@
-import React from 'react'
+import React from 'react';
 import Header from './components/Header'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom';
 import Matches from './Routes/Matches'
-import Home from './Routes/Home'
+import { Home, Account, Leaderboard, SignIn, SignUp } from './Routes';
 import AgentPage from './components/AgentPage'
-import SignIn from './Routes/SignIn'
-import SignUp from './Routes/SignUp'
 import { ThemeProvider } from './context/ThemeContext'
 import Footer from './components/Footer'
-import Account from './Routes/Account'
 import { AuthContextProvider } from './context/AuthContext'
-import Leaderboard from './Routes/Leaderboard'
 
 const App = () => {
   return (

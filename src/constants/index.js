@@ -23,6 +23,8 @@ export const episodes = [
 export const Regions = [
   "Europe",
   "North-America",
+  "Asia-pacific",
+  "Brazil",
   "Latam",
   "Korea"
 ]

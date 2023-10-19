@@ -30,12 +30,7 @@ const EventSection = ({ para, head }) => (
             </div>
             <div
               className="w-24 flex p-4 dark:bg-[#334155] bg-[#cbd5e1]"
-            >
-              <img
-                src={event.event_logo}
-                className="h-22 w-22 object-contain mx-auto"
-              />
-            </div>
+            />
           </div>
         ))}
       </>
