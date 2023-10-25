@@ -16,8 +16,9 @@ const Account = () => {
     }
   };
 
-  return (
-    <div className='max-w-[1140px] mx-auto'>
+  
+    if(user){
+      return (<div className='max-w-[1140px] mx-auto'>
         <div className='flex justify-between items-center my-12 py-8 rounded-div'>
           <div>
             <h1 className='text-2xl font-bold'>Account</h1>
@@ -36,7 +37,11 @@ const Account = () => {
           </div>
         </div>
       </div>
-  );
+      )
+    }else{
+      return <p className="text-center">Please sign in/sign up.</p>
+    }
+  
 };
 
 export default Account;
