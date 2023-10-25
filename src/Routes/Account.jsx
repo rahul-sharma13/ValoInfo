@@ -1,11 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
+import SavedMatches from "../components/SavedMatches";
 
 const Account = () => {
-  const { user,logOut } = UserAuth();
+  const { user, logOut } = UserAuth();
   const navigate = useNavigate();
-  const out = () => {
+
+  const handleSignOut = () => {
     try {
       logOut();
       navigate("/");
@@ -15,17 +17,25 @@ const Account = () => {
   };
 
   return (
-    <div className="text-center">
-      SAB DEKHNA H LA... KO
-      {user?.email}
-      <button
-        className="ml-2 border-2 border-black px-9 py-3 rounded-xl dark:border-white"
-        onClick={out}
-      >
-        LogOut
-      </button>
-
-    </div>
+    <div className='max-w-[1140px] mx-auto'>
+        <div className='flex justify-between items-center my-12 py-8 rounded-div'>
+          <div>
+            <h1 className='text-2xl font-bold'>Account</h1>
+            <div>
+              <p>Welcome, {user?.email}</p>  {/* ?. is used for optional chaining (it returns an undefined as result instead of throwing an error if an object is accessed using this and it is not defined.) */}
+            </div>
+          </div>
+          <div>
+            <button onClick={handleSignOut} className='border px-6 py-2 rounded-2xl shadow-lg hover:shadow-2xl'>Sign Out</button>
+          </div>
+        </div>
+        <div className='flex justify-between items-center my-12 py-8 rounded-div'>
+          <div className='w-full min-h-[300px]'>
+            <h1 className='text-2xl font-bold py-4'>Watch List</h1>
+            <SavedMatches />
+          </div>
+        </div>
+      </div>
   );
 };
 

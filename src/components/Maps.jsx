@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+
 import TextShine from "./TextShine";
 
 const Maps = () => {
@@ -43,6 +44,7 @@ const Maps = () => {
                 <img
                   src={map?.splash}
                   className="sm:h-[512px] h-[250px] sm:w-[512px] w-[300px] object-contain mt-5"
+                  loading="lazy"
                 />
                 <p className="text-center">{map?.displayName}</p>
               </div>

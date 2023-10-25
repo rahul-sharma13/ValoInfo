@@ -50,7 +50,7 @@ const SignIn = () => {
                 <input
                   placeholder="Email"
                   type="email"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full px-5 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full px-5 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <AiOutlineMail className="absolute top-3 right-2" />
@@ -70,8 +70,8 @@ const SignIn = () => {
               </button>
             </form>
             <p className="text-center text-[14px] my-3">
-              --<span className="font-bold text-[15px]">Login</span> with
-              others--
+              <span className="font-bold text-[15px]">Login</span> with
+              others
             </p>
             <button
               className=" border-2 border-black px-9 py-3 rounded-xl dark:border-white w-full"

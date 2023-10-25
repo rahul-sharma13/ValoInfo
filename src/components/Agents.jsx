@@ -61,6 +61,7 @@ const Agents = () => {
                   <img
                     src={agent?.fullPortrait}
                     className="h-[512px] w-[512px] object-contain"
+                    loading="lazy"
                   />
                 </div>
                 {/* right */}

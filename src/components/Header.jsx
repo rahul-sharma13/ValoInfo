@@ -12,7 +12,7 @@ const Header = () => {
 
   const [nav, setNav] = useState(false);
   const handleClick = () => {
-    setNav(!nav);
+    setNav((prevValue) => !prevValue)
   };
 
   const hideTab = () => {

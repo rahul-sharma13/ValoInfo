@@ -4,14 +4,15 @@ import MatchCard from '../components/MatchCard';
 import TextShine from '../components/TextShine';
 
 const Matches = () => {
-    const url = "api/matches/results";
+    // const url = "api/matches/results";
+    const url = `https://api.henrikdev.xyz/valorant/v1/esports/schedule?api_key=${import.meta.env.VITE_API_KEY}`;
     const [matches, setMatches] = useState([]);
   
     //API call
     useEffect(() => {
       axios.get(url).then((response) => {
-        setMatches(response.data.matches);
-        // console.log(response.data.matches);
+        // console.log(response.data.data);
+        setMatches(response.data.data);
       }).catch((error) => {
         console.log(error);
       });
@@ -29,7 +30,6 @@ const Matches = () => {
     const prePage = () => {
       if (currentPage !== 1) {
         setCurrentPage(currentPage - 1);
-        console.log(currentPage);
       }
     };
   
@@ -49,12 +49,12 @@ const Matches = () => {
           <h1 className="mt-10 mx-auto">
             <TextShine name="Completed Matches"/>
           </h1>
-          {records.map((match, index) => (
-            <MatchCard {...match} key={index} index={index} />
+          {records.map((match,index) => (
+            <MatchCard match={match} index={index} key={index}/>
           ))}
-        </div>
+        </div>  
   
-        <h2 className="text-center mb-4 text-[14px] font-semibold font-poppins">Page - {currentPage} / {npage}</h2>
+        <h2 className="text-center my-4 text-[14px] font-semibold font-poppins">Page - {currentPage} / {npage}</h2>
   
         {/* Pagination menu */}    
         <div className="flex justify-center space-x-1 dark:text-gray-100">
@@ -112,3 +112,6 @@ const Matches = () => {
 }
 
 export default Matches
+// {records.map((match, index) => (
+//   <MatchCard {...match} key={index} index={index} />
+// ))}

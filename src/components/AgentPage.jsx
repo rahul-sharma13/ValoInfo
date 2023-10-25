@@ -14,7 +14,6 @@ const AgentPage = () => {
     axios
       .get(url)
       .then((response) => {
-        console.log(response.data.data);
         setAbilities(response.data.data.abilities);
         setDetails(response.data.data);
       })

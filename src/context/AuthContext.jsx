@@ -40,12 +40,12 @@ export const AuthContextProvider = ({ children }) => {
             const docSnap = getDoc(docRef);
 
             docSnap.then(docSnap => {
-                if (docSnap.exists()) {
+                if (docSnap?.exists()) {
                     console.log("exists")
                 } else {
                     if (currentUser) {
                         // console.log(currentUser)
-                        setDoc(doc(db, 'users', currentUser.email), {
+                        setDoc(doc(db, 'users', currentUser?.email), {
                             watchList: [],
                         })
                     }
