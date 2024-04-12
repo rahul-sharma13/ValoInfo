@@ -4,12 +4,10 @@ import { UserAuth } from '../context/AuthContext';
 import { db } from '../firebase';
 import { doc, arrayUnion, updateDoc } from 'firebase/firestore';
 
-const MatchCard = ({ match, index }) => {
+const MatchCard = ({ match }) => {
     const [savedMatch, setSavedMatch] = useState(false);
     const { user } = UserAuth();
-
-    const matchPath = doc(db, "users", `${user?.email}`);
-
+    const matchPath = doc(db, 'users', `${user?.email}`);
     const saveMatch = async () => {
         if (user?.email) {
             setSavedMatch(true);
@@ -46,9 +44,9 @@ const MatchCard = ({ match, index }) => {
                         {match.match?.teams[0]?.name}
                     </div>
                     <div className="flex">
-                        <div className={`${match.match?.teams[0]?.has_won ? "text-green-300" : "text-red-300"}`}>{match.match?.teams[0].game_wins}</div>
+                        <div className={`${match.match?.teams[0]?.has_won ? "text-green-600" : "text-red-600"}`}>{match.match?.teams[0].game_wins}</div>
                         <div>&nbsp;:&nbsp;</div>
-                        <div className={`${match.match?.teams[1]?.has_won ? "text-green-300" : "text-red-300"}`}>{match.match?.teams[1].game_wins}</div>
+                        <div className={`${match.match?.teams[1]?.has_won ? "text-green-600" : "text-red-600"}`}>{match.match?.teams[1].game_wins}</div>
                     </div>
                     <div>{match.match?.teams[1].name}</div>
                 </div>

@@ -42,14 +42,6 @@ const Leaderboard = () => {
     setRegionMenu((prevValue) => !prevValue);
   }
 
-  // handling closing on click in menu 
-  const handleClickEA = () => {
-    setEaMenu(false);
-  }
-  const handleClickRegion = () => {
-    setRegionMenu(false);
-  }
-
   // to get API response
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -79,18 +71,24 @@ const Leaderboard = () => {
       </div>
 
       {/* epside menu */}
-      <div className={eaMenu ? 'h-24 absolute z-10 w-36 bg-background border-2 flex flex-col rounded-2xl left-36 top-36 items-center overflow-y-scroll no-scrollbar' : 'hidden'} onClick={handleClickEA}>
+      <div className={eaMenu ? 'h-24 absolute z-10 w-36 bg-background border-2 flex flex-col rounded-2xl left-36 top-36 items-center overflow-y-scroll no-scrollbar' : 'hidden'}>
         {episodes.map((episode, index) => (
-          <h1 key={index} className={`cursor-pointer py-1 ${index === episodes.length - 1 ? 'mb-2' : 'mb-0'} hover:text-gray-400 font-semibold tracking-wider`} onClick={() => setEpisodeAct(episode.toLowerCase().replace('-', ''))}>
+          <h1 key={index} className={`cursor-pointer py-1 ${index === episodes.length - 1 ? 'mb-2' : 'mb-0'} hover:text-gray-400 font-semibold tracking-wider`} onClick={() => {
+            (setEpisodeAct(episode.toLowerCase().replace('-', '')));
+            setEaMenu((prevValue) => !prevValue)
+          }}>
             {episode}
           </h1>
         ))}
       </div>
 
       {/* region menu */}
-      <div className={regionMenu ? 'h-24  absolute z-10 w-28 bg-background border-2 flex flex-col rounded-2xl left-[305px] top-36 items-center overflow-auto overflow-y-scroll no-scrollbar font-semibold ' : 'hidden'} onClick={handleClickRegion}>
+      <div className={regionMenu ? 'h-24  absolute z-10 w-28 bg-background border-2 flex flex-col rounded-2xl left-[305px] top-36 items-center overflow-auto overflow-y-scroll no-scrollbar font-semibold ' : 'hidden'} >
         {Regions.map((region, index) => (
-          <h1 key={index} className={`text-[14px] cursor-pointer py-1 ${index === Regions.length - 1 ? 'mb-2' : 'mb-0'} hover:text-gray-400 `} onClick={() => setCurrentRegion(region)}>
+          <h1 key={index} className={`text-[14px] cursor-pointer py-1 ${index === Regions.length - 1 ? 'mb-2' : 'mb-0'} hover:text-gray-400 `} onClick={() => {
+            (setCurrentRegion(region));
+            setRegionMenu((prevValue) => !prevValue)
+          }}>
             {region}
           </h1>
         ))}

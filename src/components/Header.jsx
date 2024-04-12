@@ -25,7 +25,7 @@ const Header = () => {
     setMenu(!menu);
   }
 
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <nav>
@@ -77,7 +77,7 @@ const Header = () => {
               </div>
             ) : (
               <div
-                className={`bg-accent h-20 rounded-xl w-24 absolute top-14 right-52 text-[14px] shadow-xl ${nav ? "" : "hidden"
+                className={`bg-accent h-20 rounded-xl w-24 absolute top-14 right-52 text-[14px] shadow-xl ${!nav && "hidden"
                   }`}
               >
                 <ul className="list-none items-center mt-4 flex flex-col">

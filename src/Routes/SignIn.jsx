@@ -10,7 +10,7 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { signIn, signInWithGoogle } = UserAuth();
+  const { signIn } = UserAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,14 +24,9 @@ const SignIn = () => {
     }
   };
 
-  const googleSignIn = async () => {
-    try {
-      await signInWithGoogle();
-        navigate("/account");  
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const goToSignUp = () => {
+    navigate("/SignUp");
+  }
 
   return (
     <div className="bg-accent sm:max-w-3xl max-w-[350px] mx-auto sm:h-[500px] h-[400px] my-6 rounded-[40px] font-poppins tracking-wider">
@@ -50,7 +45,7 @@ const SignIn = () => {
                 <input
                   placeholder="Email"
                   type="email"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full px-5 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                  className="bg-gray-50 border outline-none border-gray-300 text-gray-900 text-sm rounded-lg w-full px-5 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <AiOutlineMail className="absolute top-3 right-2" />
@@ -60,7 +55,7 @@ const SignIn = () => {
                 <input
                   placeholder="Password"
                   type="password"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full px-5 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                  className="bg-gray-50 border outline-none border-gray-300 text-gray-900 text-sm rounded-lg block w-full px-5 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <CiLock className="absolute top-3 right-2" />
@@ -69,15 +64,9 @@ const SignIn = () => {
                 Sign In
               </button>
             </form>
-            <p className="text-center text-[14px] my-3">
-              <span className="font-bold text-[15px]">Login</span> with
-              others
-            </p>
-            <button
-              className=" border-2 border-black px-9 py-3 rounded-xl dark:border-white w-full"
-              onClick={googleSignIn}
-            >
-              Login with <span className="font-bold text-[15px]">Google</span>
+            <p className="text-center text-[14px] my-3">Don't an account?</p>
+            <button onClick={goToSignUp} className=" border-2 border-black px-9 py-3 rounded-xl w-full">
+              <span className="font-bold text-[15px] tracking-wide">SignUp</span> here
             </button>
           </div>
         </div>

@@ -4,12 +4,12 @@ import { UserAuth } from "../context/AuthContext";
 import SavedMatches from "../components/SavedMatches";
 
 const Account = () => {
-  const { user, logOut } = UserAuth();
+  const { user, logout } = UserAuth();
   const navigate = useNavigate();
 
   const handleSignOut = () => {
     try {
-      logOut();
+      logout();
       navigate("/");
     } catch (e) {
       console.log(e.message);

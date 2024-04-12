@@ -11,8 +11,8 @@ const Matches = () => {
     //API call
     useEffect(() => {
       axios.get(url).then((response) => {
-        // console.log(response.data.data);
-        setMatches(response.data.data);
+        // console.log(response.data.data.reverse());
+        setMatches(response.data.data.reverse());
       }).catch((error) => {
         console.log(error);
       });
@@ -50,7 +50,7 @@ const Matches = () => {
             <TextShine name="Completed Matches"/>
           </h1>
           {records.map((match,index) => (
-            <MatchCard match={match} index={index} key={index}/>
+            <MatchCard match={match} key={index}/>
           ))}
         </div>  
   
@@ -112,6 +112,3 @@ const Matches = () => {
 }
 
 export default Matches
-// {records.map((match, index) => (
-//   <MatchCard {...match} key={index} index={index} />
-// ))}
